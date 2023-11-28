@@ -27,7 +27,6 @@ public class ValidatePage extends Base {
         webDriver.get(utils.getValue("baseURL"));
         webDriver.manage().window().maximize();
     }
-
     @Test
     public void testBlankPage() throws IOException {
         System.out.println("tessst");
