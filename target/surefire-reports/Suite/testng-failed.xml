@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <listeners>
+    <listener class-name="wikipedia.Listener"/>
+  </listeners>
+  <test thread-count="5" parallel="tests" name="Validate blank page(failed)" verbose="0">
+    <classes>
+      <class name="wikipedia.testsuites.ValidatePage">
+        <methods>
+          <include name="testBlankPage"/>
+          <include name="initializeDriver"/>
+          <include name="testLinkWork"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- wikipedia.testsuites.ValidatePage -->
+    </classes>
+  </test> <!-- Validate blank page(failed) -->
+</suite> <!-- Failed suite [Suite] -->
