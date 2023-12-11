@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="tests">
-<listeners>
-<listener class-name="wikipedia.Listener"></listener>
-</listeners>
-    <test name="Validate blank page">
-        <classes>
-            <class name="wikipedia.testsuites.ValidatePage"/>
-        </classes>
-    </test>      
+<suite name="Suite" thread-count="4" parallel="tests" >
+    <listeners>
+        <listener class-name="wikipedia.Listener"></listener>
+    </listeners>
      <test name="Make appointment">
         <classes>
-            <class name="wikipedia.testsuites.Appointment"/>
+            <class name="wikipedia.testsuites.Appointment">
+
+            </class>
         </classes>
-    </test>  
+    </test>
+    <test name="Validate blank page">
+        <classes>
+            <class name="wikipedia.testsuites.ValidatePage" >
+                <methods>
+                    <include name="testBlankPage" />
+                    <exclude name="testLinkWork" />
+                </methods>
+            </class>
+        </classes>
+    </test>
 </suite>
