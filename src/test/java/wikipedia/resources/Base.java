@@ -5,10 +5,10 @@ import java.io.IOException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
 
 public class Base {
+
     public WebDriver webDriver;
     public  Utils utils;
     public WebDriver initialBrowsers(String browser) throws IOException{
@@ -27,15 +27,32 @@ public class Base {
     }
     @BeforeTest
     public void initializeDriver() throws IOException {
+        System.out.println("before Test");
         webDriver = initialBrowsers("browser");
         webDriver.get(utils.getValue("baseURL"));
         webDriver.manage().window().maximize();
     }
-    //@AfterTest
+    @AfterTest
     public void tearDown(){
+        System.out.println("after test");
         webDriver.close();
     }
+    @BeforeClass
+    public void beforeClass(){
+        System.out.println("before class");
+    }
+    @AfterClass
+    public void afterCalss(){
+        System.out.println("after class");
+    }
 
-   
+    @BeforeMethod
+    public void beforeMethod(){
+        System.out.println("before Method");
+    }
+    @AfterMethod
+    public void afterMethod(){
+        System.out.println("after Method");
+    }
  
 }
