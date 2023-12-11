@@ -1,30 +1,36 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 18.708 s <<< FAILURE! - in TestSuite
-testBlankPage(wikipedia.testsuites.ValidatePage)  Time elapsed: 0.039 s  <<< FAILURE!
+Tests run: 4, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 17.159 s <<< FAILURE! - in TestSuite
+testBlankPage(wikipedia.testsuites.ValidatePage)  Time elapsed: 0.033 s  <<< FAILURE!
 org.openqa.selenium.NoSuchElementException: 
 no such element: Unable to locate element: {"method":"xpath","selector":"//header/div[1]/nav/div"}
-  (Session info: chrome=119.0.6045.159)
+  (Session info: chrome=119.0.6045.199)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.15.0', revision: '1d14b5521b'
 System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.5', java.version: '11.0.20'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e0b63ea7a8faded02acdf66cad0714d1, findElement {using=xpath, value=//header/div[1]/nav/div}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.159, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /var/folders/sj/spty4b2s0vn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59216}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:59216/devtoo..., se:cdpVersion: 119.0.6045.159, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e0b63ea7a8faded02acdf66cad0714d1
-	at wikipedia.testsuites.ValidatePage.testBlankPage(ValidatePage.java:34)
+Command: [35261c2a677d3a251c8e99a4015a6f36, findElement {using=xpath, value=//header/div[1]/nav/div}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.199, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /var/folders/sj/spty4b2s0vn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49590}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:49590/devtoo..., se:cdpVersion: 119.0.6045.199, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 35261c2a677d3a251c8e99a4015a6f36
+	at wikipedia.testsuites.ValidatePage.testBlankPage(ValidatePage.java:22)
 
-testLinkWork(wikipedia.testsuites.ValidatePage)  Time elapsed: 0.027 s  <<< FAILURE!
+testBlankPage(wikipedia.testsuites.ValidatePage)  Time elapsed: 0.037 s  <<< FAILURE!
+java.lang.NullPointerException
+
+appointmentSchedule(wikipedia.testsuites.Appointment)  Time elapsed: 6.691 s  <<< FAILURE!
 org.openqa.selenium.NoSuchElementException: 
-no such element: Unable to locate element: {"method":"xpath","selector":"//header/div[1]/nav/div"}
-  (Session info: chrome=119.0.6045.159)
+no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='gia-scheduler__shifts']//following-sibling::button/span/span/strong"}
+  (Session info: chrome=119.0.6045.199)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.15.0', revision: '1d14b5521b'
 System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '13.5', java.version: '11.0.20'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e0b63ea7a8faded02acdf66cad0714d1, findElement {using=xpath, value=//header/div[1]/nav/div}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.159, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /var/folders/sj/spty4b2s0vn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59216}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:59216/devtoo..., se:cdpVersion: 119.0.6045.159, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e0b63ea7a8faded02acdf66cad0714d1
-	at wikipedia.testsuites.ValidatePage.testLinkWork(ValidatePage.java:43)
+Command: [412017184933c64dbdaff6bd928313aa, findElement {using=xpath, value=//div[@class='gia-scheduler__shifts']//following-sibling::button/span/span/strong}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.199, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: /var/folders/sj/spty4b2s0vn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49589}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:49589/devtoo..., se:cdpVersion: 119.0.6045.199, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 412017184933c64dbdaff6bd928313aa
+	at wikipedia.testsuites.Appointment.appointmentSchedule(Appointment.java:65)
+
+appointmentSchedule(wikipedia.testsuites.Appointment)  Time elapsed: 6.691 s  <<< FAILURE!
+java.lang.NullPointerException
 

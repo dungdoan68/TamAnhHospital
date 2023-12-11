@@ -3,26 +3,20 @@ package wikipedia.resources;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.time.Duration;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Properties;
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import wikipedia.pageObjects.Homepage;
 import wikipedia.pageObjects.Lich;
 
 public class Utils {
@@ -39,10 +33,14 @@ public class Utils {
     public String takeScreenShot(String testCaseName, WebDriver webDriver) throws IOException {
         TakesScreenshot tk = ((TakesScreenshot) webDriver);
         File src = tk.getScreenshotAs(OutputType.FILE);
-        // String fileDes =
-        // System.getProperty("user.dir")+"/src/reports"+testCaseName+".png";
         String fileDes = System.getProperty("user.dir") + "/src/reports/" + testCaseName + ".png";
-        FileUtils.copyFile(src, new File(fileDes));
+        try{
+            FileUtils.copyFile(src, new File(fileDes));
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+
         return fileDes;
     }
 
@@ -66,11 +64,29 @@ public class Utils {
         actions.perform();
     }
 
-    public void chooseEle(List<WebElement> listEle, String eleName) {
+    public void verifyLink(String url) {
+        try {
+            URL link = new URL(url);
+            HttpURLConnection httpURLConnection = (HttpURLConnection) link.openConnection();
+            httpURLConnection.setConnectTimeout(3000); // Set connection timeout to 3 seconds
+            httpURLConnection.connect();
+
+            if (httpURLConnection.getResponseCode() == 200) {
+                System.out.println(url + " - " + httpURLConnection.getResponseMessage());
+            } else {
+                System.out.println(url + " - " + httpURLConnection.getResponseMessage() + " - " + "is a broken link");
+            }
+        } catch (Exception e) {
+            System.out.println(url + " - " + "is a broken link");
+        }
+    }
+    public void chooseEle(WebDriver webDriver,List<WebElement> listEle, String eleName) {
         for (WebElement ele : listEle) {
             try {
-                if (ele.getText().equalsIgnoreCase(eleName) == true) {
+                if (ele.getText().equalsIgnoreCase(eleName)) {
                     System.out.println(ele.getText());
+                    Thread.sleep(1000);
+                    scrollToEle(webDriver,ele);
                     ele.click();
                     break;
                 }
