@@ -4,15 +4,16 @@ import java.io.IOException;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import wikipedia.Listener;
-import wikipedia.pageObjects.Homepage;
-import wikipedia.resources.Base;
+import extentReportListener.TestNGListener;
+import pages.Homepage;
+import base.Base;
+import utils.Utils;
 
-@Listeners(Listener.class)
+@Listeners(TestNGListener.class)
 public class ValidatePage extends Base {
     @Test
     public void testBlankPage() throws IOException {
@@ -37,4 +38,5 @@ public class ValidatePage extends Base {
               System.out.println("ValidatePage2");
         }
     }
+
 }
