@@ -2,14 +2,19 @@ package utils;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.time.Duration;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Objects;
 import java.util.Properties;
 import org.apache.commons.io.FileUtils;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -17,11 +22,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import pages.Lich;
 
 public class Utils {
     public WebDriver webDriver;
-
+    public static String TESTDATA_SHEET_PATH=System.getProperty("user.dir") + "/src/main/java/testdata";
+    static Workbook book;
+    static Sheet sheet;
     public String getValue(String key) throws IOException {
         Properties p = new Properties();
         FileInputStream fis = new FileInputStream(
@@ -43,7 +51,6 @@ public class Utils {
 
         return fileDes;
     }
-
     public void clickElement(WebDriver webDriver, WebElement ele) {
         try {
             WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofMillis(3000));
@@ -96,7 +103,6 @@ public class Utils {
 
         }
     }
-
     // Date time format dd/mm/yyyy
     public void chooseDate(WebDriver webDriver, String dateTime) {
         Lich lich = new Lich(webDriver);
@@ -118,13 +124,13 @@ public class Utils {
                 }
             }
             if (monthDiff < 0) {
-                System.out.println("CAN NOT CHOOSE MONTH WWHICH IS LESS THAN CURRENT MONTH");
+                System.out.println("CAN NOT CHOOSE MONTH WHICH IS LESS THAN CURRENT MONTH");
             }
         }
         int dayDiff = Integer.parseInt(date_time[0])- Calendar.getInstance().get(Calendar.DATE);
         if (date_time[0].startsWith("0")) {
                     date_time[0] = date_time[0].replace("0", "").trim();
-                    System.out.println("Ngay hien tai da trim"+date_time[0]);
+                    System.out.println("Ngay hien tai da trim: "+date_time[0]);
                 }
         if(dayDiff!=0){
             System.out.println("Ngay hien tai"+date_time[0]);
@@ -173,5 +179,91 @@ public class Utils {
                 }
             }
         }
+    }
+    public Objects[][] getTestData(String testDataSheet){
+        FileInputStream fis = null;
+        try{
+            fis = new FileInputStream(TESTDATA_SHEET_PATH);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        try {
+            book = WorkbookFactory.create(fis);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        sheet = book.getSheet(testDataSheet);
+        Objects [][] data = new Objects[sheet.getLastRowNum()][sheet.getRow(0).getLastCellNum()];
+        for(int i=0; i<sheet.getLastRowNum();i++){
+            for(int j=0; j<sheet.getRow(0).getLastCellNum();j++){
+                //data[i][j] = sheet.getRow(i+1).getCell(j).toString();
+            }
+        }
+        return  data;
+    }
+    public void readExcelData(String fileName, String testDataSheet){
+        FileInputStream fis = null;
+        File file = new File(TESTDATA_SHEET_PATH+"/"+fileName);
+        try{
+            fis = new FileInputStream(file);
+            System.out.println(TESTDATA_SHEET_PATH+"/"+fileName);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        try {
+            book = WorkbookFactory.create(fis);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        String fileExtensionName = fileName.substring(fileName.indexOf("."));
+        if(fileExtensionName.equals("xlsx")){
+            try {
+                book = new XSSFWorkbook(fis);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        else if(fileExtensionName.equals("xls")){
+            try {
+                book = new HSSFWorkbook(fis);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        sheet = book.getSheet(testDataSheet);
+        int rowCount = sheet.getLastRowNum()-sheet.getFirstRowNum();
+        Objects [][] data = new Objects[sheet.getLastRowNum()][sheet.getRow(0).getLastCellNum()];
+        for(int i=1; i<rowCount+1;i++){
+            Row row = sheet.getRow(i);
+            for(int j=0; j<row.getLastCellNum();j++){
+                System.out.print(row.getCell(j).getStringCellValue()+ "||");
+            }
+            System.out.println();
+        }
+    }
+    public static Object[][] getTestData1(String fileName,String sheetName) {
+        FileInputStream fis = null;
+        File file = new File(TESTDATA_SHEET_PATH+"/"+fileName);
+        try {
+            fis = new FileInputStream(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        try {
+            book = WorkbookFactory.create(file);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        sheet = book.getSheet(sheetName);
+        Object[][] data = new Object[sheet.getLastRowNum()][sheet.getRow(0).getLastCellNum()];
+        for (int i = 0; i < sheet.getLastRowNum(); i++) {
+            for (int k = 0; k < sheet.getRow(0).getLastCellNum(); k++) {
+                data[i][k] = sheet.getRow(i + 1).getCell(k).toString();
+                System.out.print(data[i][k]);
+            }
+        }
+        return data;
     }
 }

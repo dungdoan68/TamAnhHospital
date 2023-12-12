@@ -29,24 +29,6 @@ public class TestNGListener implements ITestListener {
 	public void onTestSuccess(ITestResult result) {
 		Utils utils = new Utils();
 		testLocal.get().log(Status.PASS, result.getMethod().getMethodName() + " pass");
-		WebDriver webDriver = null;
-		String testCaseName = result.getMethod().getMethodName();
-		try {
-			webDriver = (WebDriver)result.getTestClass().getRealClass().
-					getDeclaredField("webDriver").
-					get(result.getInstance());
-			System.out.println("Init webdriver");
-		} catch(Exception e1) {
-			e1.printStackTrace();
-			System.out.println("NO webdriver");
-		}
-		try {
-			utils.takeScreenShot(testCaseName, webDriver);
-			testLocal.get().addScreenCaptureFromPath(utils.takeScreenShot(testCaseName, webDriver),testCaseName);
-			System.out.println("Start capture");
-		} catch (IOException e) {
-			throw new RuntimeException(e);
-		}
 	}
 
 	@Override
@@ -65,7 +47,6 @@ public class TestNGListener implements ITestListener {
 		 	System.out.println("NO webdriver");
 		 }
 		try {
-			utils.takeScreenShot(testCaseName, driver);
 			testLocal.get().addScreenCaptureFromPath(utils.takeScreenShot(testCaseName, driver),testCaseName);
 			System.out.println("Start capture");
 			

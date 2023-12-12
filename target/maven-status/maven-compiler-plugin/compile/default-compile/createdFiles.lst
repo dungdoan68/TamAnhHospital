@@ -1,2 +1,6 @@
-wikipedia/pageObjects/Lich.class
-wikipedia/pageObjects/Homepage.class
+pages/Homepage.class
+utils/Utils.class
+pages/Lich.class
+base/Base.class
+extentReportListener/TestNGListener.class
+extentReportListener/TestNGListener$Reports.class

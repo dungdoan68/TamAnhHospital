@@ -4,19 +4,14 @@
     <listeners>
         <listener class-name="extentReportListener.TestNGListener"></listener>
     </listeners>
-     <test name="Make appointment">
+
+
+    <test name="Make appointment">
         <classes>
             <class name="wikipedia.testsuites.Appointment">
-
-            </class>
-        </classes>
-    </test>
-    <test name="Validate blank page">
-        <classes>
-            <class name="wikipedia.testsuites.ValidatePage" >
                 <methods>
-                    <include name="testBlankPage" />
-                    <exclude name="testLinkWork" />
+                    <include name="testDP" />
+                    <exclude name="appointmentSchedule" />
                 </methods>
             </class>
         </classes>
