@@ -1,7 +1,8 @@
-package wikipedia;
+package extentReportListener;
 
 import java.io.IOException;
 
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -11,10 +12,9 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
-import wikipedia.resources.Base;
-import wikipedia.resources.Utils;
+import utils.Utils;
 
-public class Listener implements ITestListener {
+public class TestNGListener implements ITestListener {
     ExtentReports extent = Reports.getReportObject();
 	ExtentTest extentTest;
 	ThreadLocal<ExtentTest> testLocal = new ThreadLocal<ExtentTest>();//give pool contain variable "extentTest" to define what test is running
@@ -91,5 +91,23 @@ public class Listener implements ITestListener {
 		System.out.println("End of test");
 		extent.flush();
 	}
-    
+
+	public static class Reports {
+		 static ExtentReports extentReport;
+
+		public static ExtentReports getReportObject() {
+			String path = System.getProperty("user.dir")+"/src/reports/index.html";
+			ExtentSparkReporter report = new ExtentSparkReporter(path);
+			report.config().setDocumentTitle("Tam Anh Hospital");
+			report.config().setReportName("Validate E2E function ");
+
+			extentReport = new ExtentReports();
+			extentReport.attachReporter(report);
+			extentReport.setSystemInfo("QC/QA", "Dung Doan");
+			//extentReport.setSystemInfo("Platfom",util.getValue("browser") );
+			extentReport.setSystemInfo("OS", "Mac");
+
+			return extentReport;
+		}
+	}
 }

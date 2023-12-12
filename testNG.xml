@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite" thread-count="4" parallel="tests" >
     <listeners>
-        <listener class-name="wikipedia.Listener"></listener>
+        <listener class-name="extentReportListener.TestNGListener"></listener>
     </listeners>
      <test name="Make appointment">
         <classes>

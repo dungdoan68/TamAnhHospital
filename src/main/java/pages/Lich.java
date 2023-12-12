@@ -1,4 +1,4 @@
-package wikipedia.pageObjects;
+package pages;
 
 import java.util.List;
 

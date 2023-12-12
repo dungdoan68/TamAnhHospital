@@ -1,4 +1,4 @@
-package wikipedia.resources;
+package base;
 
 import java.io.IOException;
 
@@ -6,21 +6,22 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
+import utils.Utils;
 
 public class Base {
 
     public WebDriver webDriver;
-    public  Utils utils;
+    public Utils utils;
     public WebDriver initialBrowsers(String browser) throws IOException{
         utils = new Utils();
         String value = utils.getValue(browser);
         if(value.equals("chrome") ){
-			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/src/test/java/wikipedia/resources/webDrivers/chromedriver");
+			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/src/main/java/resources/chromedriver");
 			webDriver = new ChromeDriver();
 			
 		}
 		else if (value.equals("firefox")) {
-			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"/src/test/java/wikipedia/resources/webDrivers/geckodriver");
+			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"/src/main/java/resources/geckodriver");
 			webDriver = new FirefoxDriver();
 		}
         return webDriver;

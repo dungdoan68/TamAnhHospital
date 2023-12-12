@@ -2,23 +2,20 @@ package wikipedia.testsuites;
 
 import java.time.Duration;
 
-import org.checkerframework.checker.units.qual.h;
-import org.checkerframework.checker.units.qual.s;
+import extentReportListener.TestNGListener;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import wikipedia.Listener;
-import wikipedia.pageObjects.Homepage;
-import wikipedia.pageObjects.Lich;
-import wikipedia.resources.Base;
-import wikipedia.resources.Utils;
+import pages.Homepage;
+import pages.Lich;
+import base.Base;
+import utils.Utils;
 
-@Listeners(Listener.class)
+@Listeners(TestNGListener.class)
 public class Appointment extends Base {
     // public WebDriver webDriver;
     SoftAssert softAssert;

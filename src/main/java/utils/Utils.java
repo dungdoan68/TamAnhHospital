@@ -1,4 +1,4 @@
-package wikipedia.resources;
+package utils;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -17,7 +17,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import wikipedia.pageObjects.Lich;
+import pages.Lich;
 
 public class Utils {
     public WebDriver webDriver;
@@ -25,7 +25,7 @@ public class Utils {
     public String getValue(String key) throws IOException {
         Properties p = new Properties();
         FileInputStream fis = new FileInputStream(
-                new File(System.getProperty("user.dir") + "/src/test/java/wikipedia/resources/global.properties"));
+                new File(System.getProperty("user.dir") + "/src/main/java/config/global.properties"));
         p.load(fis);
         return p.getProperty(key);
     }
