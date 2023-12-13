@@ -7,12 +7,11 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import pages.Homepage;
+import pages.Homepage_TA;
 import pages.Lich;
 import base.Base;
 import utils.Utils;
@@ -32,7 +31,7 @@ public class Appointment extends Base {
         String tenBacSi="PGS.TS.BS. Nguyễn Thị Yến";
         String expectationFinalDateTime = date +" - "+time;
         utils = new Utils();
-        Homepage homepage = new Homepage(webDriver);
+        Homepage_TA homepage = new Homepage_TA(webDriver);
         utils.clickElement(webDriver,homepage.haNoiBranch());
         String b = homepage.haNoiBranch().getCssValue("color");
         System.out.println("text color is: " + Color.fromString(b).asHex());// verify button clicked
@@ -76,7 +75,7 @@ public class Appointment extends Base {
         String time="Sáng";
         String expectationFinalDateTime = date +" - "+time;
         utils = new Utils();
-        Homepage homepage = new Homepage(webDriver);
+        Homepage_TA homepage = new Homepage_TA(webDriver);
         utils.clickElement(webDriver,homepage.haNoiBranch());
         String b = homepage.haNoiBranch().getCssValue("color");
         System.out.println("text color is: " + Color.fromString(b).asHex());// verify button clicked

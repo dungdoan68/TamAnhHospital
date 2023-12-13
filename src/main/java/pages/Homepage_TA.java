@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class Homepage {
+public class Homepage_TA {
     public WebDriver webDriver;
     By menuWi = By.xpath("//header/div[1]/nav/div");
     By thaoLuanChungWi = By.xpath("//header/div[1]/nav/div/div/div/div/div[3]/div/ul/li[4]");
@@ -22,7 +22,7 @@ public class Homepage {
     public WebElement linkTitle(){
         return webDriver.findElement(thaoLuanChungWi);
     }
-    public Homepage(WebDriver webDriver){
+    public Homepage_TA(WebDriver webDriver){
         super();
         this.webDriver = webDriver;
     }
