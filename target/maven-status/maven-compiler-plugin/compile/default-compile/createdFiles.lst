@@ -1,6 +1,0 @@
-pages/Homepage.class
-utils/Utils.class
-pages/Lich.class
-base/Base.class
-extentReportListener/TestNGListener.class
-extentReportListener/TestNGListener$Reports.class
