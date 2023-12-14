@@ -11,7 +11,7 @@ import java.util.*;
 
 public class GetPriceTest extends Base {
     @Test
-    public void getMax() throws InterruptedException {
+    public void getMax_Ceiling_Price() throws InterruptedException {
         Homepage_HSC homepageHsc = new Homepage_HSC(webDriver);
         Thread.sleep(1000);
         double max=0;
