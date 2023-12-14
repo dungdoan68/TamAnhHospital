@@ -1,7 +1,6 @@
 package base;
 
 import java.io.IOException;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -30,7 +29,7 @@ public class Base {
     public void initializeDriver() throws IOException {
         System.out.println("before Test");
         webDriver = initialBrowsers("browser");
-        webDriver.get(utils.getValue("baseURL"));
+        webDriver.get(utils.getValue("baseHSC"));
         webDriver.manage().window().maximize();
     }
     @AfterTest
