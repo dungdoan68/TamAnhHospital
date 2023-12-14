@@ -1,14 +1,17 @@
 package wikipedia.testsuites;
 
 import base.Base;
+import extentReportListener.TestNGListener;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.Homepage_HSC;
 import utils.Utils;
 
 import java.util.*;
 
+@Listeners(TestNGListener.class)
 public class GetPriceTest extends Base {
     @Test
     public void getMax_Ceiling_Price() throws InterruptedException {

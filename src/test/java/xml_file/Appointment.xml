@@ -4,9 +4,14 @@
     <listeners>
         <listener class-name="extentReportListener.TestNGListener"></listener>
     </listeners>
-    <test name="Validate page Wiki">
+    <test name="Make appointment">
+        <parameter name="url" value="https://tamanhhospital.vn/"/>
         <classes>
-            <class name="wikipedia.testsuites.ValidatePage">
+            <class name="wikipedia.testsuites.Appointment">
+                <methods>
+                    <include name="appointmentSchedule" />
+                    <exclude name="testDP" />
+                </methods>
             </class>
         </classes>
     </test>

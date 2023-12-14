@@ -11,6 +11,7 @@ public class Base {
 
     public WebDriver webDriver;
     public Utils utils;
+
     public WebDriver initialBrowsers(String browser) throws IOException{
         utils = new Utils();
         String value = utils.getValue(browser);
@@ -25,11 +26,15 @@ public class Base {
 		}
         return webDriver;
     }
+
+    @Parameters({ "url" })
     @BeforeTest
-    public void initializeDriver() throws IOException {
+    public void initializeDriver(String url) throws IOException {
         System.out.println("before Test");
         webDriver = initialBrowsers("browser");
-        webDriver.get(utils.getValue("baseHSC"));
+        System.out.printf(url);
+        webDriver.get(url);
+        //webDriver.get(utils.getValue("baseHSC"));
         webDriver.manage().window().maximize();
     }
     @AfterTest

@@ -4,9 +4,13 @@
     <listeners>
         <listener class-name="extentReportListener.TestNGListener"></listener>
     </listeners>
-    <test name="Validate page Wiki">
+    <test name="Stock Exchange ">
+        <parameter name="url" value="https://priceonline.hsc.com.vn/oddlot"/>
         <classes>
-            <class name="wikipedia.testsuites.ValidatePage">
+            <class name="wikipedia.testsuites.GetPriceTest">
+                <methods>
+                    <include name="getMax_Ceiling_Price" />
+                </methods>
             </class>
         </classes>
     </test>

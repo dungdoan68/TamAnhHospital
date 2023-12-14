@@ -1,10 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 17.092 s <<< FAILURE! - in TestSuite
-testBlankPage(wikipedia.testsuites.ValidatePage)  Time elapsed: 0.528 s  <<< FAILURE!
-java.lang.NullPointerException
-
-appointmentSchedule(wikipedia.testsuites.Appointment)  Time elapsed: 6.786 s  <<< FAILURE!
-java.lang.NullPointerException
-
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.409 s - in TestSuite
