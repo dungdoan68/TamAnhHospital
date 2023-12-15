@@ -5,6 +5,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Cart_Practice extends Base {
     WebDriver webDriver;
     public Cart_Practice(WebDriver webDriver){
@@ -31,5 +34,6 @@ public class Cart_Practice extends Base {
     public WebElement get_Apply_Coupon(){
         return webDriver.findElement(applyCoupon);
     }
+
 
 }

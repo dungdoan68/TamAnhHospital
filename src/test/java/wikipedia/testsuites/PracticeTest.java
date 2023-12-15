@@ -1,14 +1,14 @@
 package wikipedia.testsuites;
 
 import base.Base;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.*;
 import utils.Utils;
 
+import javax.swing.*;
 import java.util.*;
 
 public class PracticeTest extends Base {
@@ -54,4 +54,34 @@ public class PracticeTest extends Base {
         cart.get_Apply_Coupon().click();
     }
 
+    @Test
+    public void filter_Price() throws InterruptedException {
+        String att = "style";
+        String bar_value="left: 0%; width: 172%;";
+        String right_price_percent = "left: 85%;";
+        Menu_Practice menu = new Menu_Practice(webDriver);
+        JavascriptExecutor js = (JavascriptExecutor) webDriver;
+        js.executeScript("const elements = document.getElementsByClassName('adsbygoogle adsbygoogle-noablate'); " +
+                "while (elements.length > 0) elements[0].remove()");
+        Actions a = new Actions(webDriver);
+        a.click(menu.get_Shop1());
+        //a.moveToElement(menu.get_Shop1());
+        a.build().perform();
+        menu.get_Shop1().click();
+        Shop_Practice shop = new Shop_Practice(webDriver);
+        shop.set_Right_Bar_value(att,right_price_percent);
+        shop.set_Price_Bar_value(att,bar_value);
+        //shop.get_Price_Bar().click();
+        //System.out.printf("ac: "+shop.get_Price_Bar().getAttribute(att));
+        a.dragAndDrop(shop.get_Right_Price(), shop.get_Price_Bar()).build().perform();
+        //a.clickAndHold(shop.get_Right_Price()).release(shop.get_Price_Bar()).build().perform();
+        //a.click(shop.get_Price_Bar()).build().perform();
+        shop.get_Filter().click();
+        shop.get_Product_List();
+    }
+
+    @Test
+    public void sorting_Products(){
+
+    }
 }
