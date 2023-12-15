@@ -22,6 +22,7 @@ public class Shop_Practice extends Base {
     By rightPrice = By.xpath("//div[@class=\"price_slider_wrapper\"]/div[1]/span[2]");
     By priceBar = By.xpath("//div[@class=\"price_slider_wrapper\"]/div[1]/div");
     By filter = By.xpath("//div[@class=\"price_slider_amount\"]/button");
+    By orderBy = By.xpath("//select[@name=\"orderby\"]");
     public WebElement get_Card(){
         return webDriver.findElement(cart);
     }
@@ -40,6 +41,9 @@ public class Shop_Practice extends Base {
     }
     public WebElement get_Filter(){
         return webDriver.findElement(filter);
+    }
+    public WebElement get_OrderBy(){
+        return webDriver.findElement(orderBy);
     }
     public void setAttibute(WebElement ele, String att, String value){
         JavascriptExecutor js = (JavascriptExecutor) webDriver;

@@ -7,18 +7,13 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.time.Duration;
-import java.util.Calendar;
-import java.util.List;
-import java.util.Objects;
-import java.util.Properties;
+import java.util.*;
+
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -265,5 +260,14 @@ public class Utils {
             }
         }
         return data;
+    }
+    public List<Object> getList(List<WebElement> listEle){
+        List<Object> list = new ArrayList<Object>();
+        for(int i=1;i<listEle.size()+1;i++){
+            WebElement ele =  webDriver.findElement
+                    (By.xpath("(//span[@class=\"price\"]/ins/span)["+i+"]"));
+            list.add(ele.getText());
+        }
+        return list;
     }
 }

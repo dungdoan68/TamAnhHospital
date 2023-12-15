@@ -3,8 +3,6 @@ package wikipedia.testsuites;
 import java.time.Duration;
 
 import extentReportListener.TestNGListener;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedConditions;

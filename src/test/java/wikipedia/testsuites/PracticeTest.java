@@ -1,8 +1,11 @@
 package wikipedia.testsuites;
 
 import base.Base;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.*;
@@ -64,9 +67,8 @@ public class PracticeTest extends Base {
         js.executeScript("const elements = document.getElementsByClassName('adsbygoogle adsbygoogle-noablate'); " +
                 "while (elements.length > 0) elements[0].remove()");
         Actions a = new Actions(webDriver);
-        a.click(menu.get_Shop1());
+        a.click(menu.get_Shop1()).build().perform();
         //a.moveToElement(menu.get_Shop1());
-        a.build().perform();
         menu.get_Shop1().click();
         Shop_Practice shop = new Shop_Practice(webDriver);
         shop.set_Right_Bar_value(att,right_price_percent);
@@ -80,8 +82,39 @@ public class PracticeTest extends Base {
         shop.get_Product_List();
     }
 
+    @DataProvider(name="Oder provider")
+    public Object[][] dataProvider(){
+        return new Object[][]{
+                {"rating"},{"popularity"},{"price-desc"}
+        };
+    }
     @Test
     public void sorting_Products(){
-
+        String orderValue ="rating";
+        Menu_Practice menu = new Menu_Practice(webDriver);
+        JavascriptExecutor js = (JavascriptExecutor) webDriver;
+        js.executeScript("const elements = document.getElementsByClassName('adsbygoogle adsbygoogle-noablate'); " +
+                "while (elements.length > 0) elements[0].remove()");
+        Actions a = new Actions(webDriver);
+        a.click(menu.get_Shop1()).build().perform();
+        menu.get_Shop1().click();
+        Shop_Practice shop = new Shop_Practice(webDriver);
+        shop.get_Filter().click();
+        Select select = new Select(shop.get_OrderBy());
+        select.selectByValue(orderValue);
+    }
+    @Test(dataProvider = "Oder provider")
+    public void sorting_Products_DataProvider(String orderValue){
+        Menu_Practice menu = new Menu_Practice(webDriver);
+        JavascriptExecutor js = (JavascriptExecutor) webDriver;
+        js.executeScript("const elements = document.getElementsByClassName('adsbygoogle adsbygoogle-noablate'); " +
+                "while (elements.length > 0) elements[0].remove()");
+        Actions a = new Actions(webDriver);
+        a.click(menu.get_Shop1()).build().perform();
+        menu.get_Shop1().click();
+        Shop_Practice shop = new Shop_Practice(webDriver);
+        shop.get_Filter().click();
+        Select select = new Select(shop.get_OrderBy());
+        select.selectByValue(orderValue);
     }
 }
