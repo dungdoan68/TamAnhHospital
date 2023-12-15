@@ -38,21 +38,21 @@ public class TestNGListener implements ITestListener {
 		testLocal.get().fail(result.getThrowable());
 		WebDriver webDriver = null;
 		String testCaseName = result.getMethod().getMethodName();
-		 try {
-			 webDriver = (WebDriver)result.getTestClass().getRealClass().getDeclaredField("webDriver").get(result.getInstance());
-			 System.out.println("Init webdriver");
-		 } catch(Exception e1) {
-		 	e1.printStackTrace();
-		 	System.out.println("NO webdriver");
-		 }
-		try {
-			testLocal.get().addScreenCaptureFromPath(utils.takeScreenShot(testCaseName, webDriver),testCaseName);
-			System.out.println("Start capture");
-			
-		} catch (IOException e) {
-			e.printStackTrace();
-			System.out.println("NO capture");
-		}
+//		 try {
+//			 webDriver = (WebDriver)result.getTestClass().getRealClass().getDeclaredField("webDriver").get(result.getInstance());
+//			 System.out.println("Init webdriver");
+//		 } catch(Exception e1) {
+//		 	e1.printStackTrace();
+//		 	System.out.println("NO webdriver");
+//		 }
+//		try {
+//			testLocal.get().addScreenCaptureFromPath(utils.takeScreenShot(testCaseName, webDriver),testCaseName);
+//			System.out.println("Start capture");
+//
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//			System.out.println("NO capture");
+//		}
 	
 	}
 
