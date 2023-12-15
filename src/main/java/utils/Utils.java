@@ -261,13 +261,4 @@ public class Utils {
         }
         return data;
     }
-    public List<Object> getList(List<WebElement> listEle){
-        List<Object> list = new ArrayList<Object>();
-        for(int i=1;i<listEle.size()+1;i++){
-            WebElement ele =  webDriver.findElement
-                    (By.xpath("(//span[@class=\"price\"]/ins/span)["+i+"]"));
-            list.add(ele.getText());
-        }
-        return list;
-    }
 }

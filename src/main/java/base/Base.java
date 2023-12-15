@@ -29,10 +29,10 @@ public class Base {
     public void initializeDriver() throws IOException {
         System.out.println("before Test");
         webDriver = initialBrowsers("browser");
-        webDriver.get(utils.getValue("baseURL"));
+        webDriver.get(utils.getValue("baseHSC"));
         webDriver.manage().window().maximize();
     }
-    //@AfterTest
+    @AfterTest
     public void tearDown(){
         System.out.println("after test");
         webDriver.close();

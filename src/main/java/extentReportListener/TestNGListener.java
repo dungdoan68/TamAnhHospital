@@ -2,7 +2,6 @@ package extentReportListener;
 
 import java.io.IOException;
 
-import base.Base;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
@@ -37,17 +36,17 @@ public class TestNGListener implements ITestListener {
 		Utils utils = new Utils();
 		extentTest.log(Status.FAIL, result.getMethod().getMethodName() + " fail");
 		testLocal.get().fail(result.getThrowable());
-		WebDriver webDriver = null;
+		WebDriver driver = null;
 		String testCaseName = result.getMethod().getMethodName();
 		 try {
-			 webDriver = (WebDriver)result.getTestClass().getRealClass().getDeclaredField("webDriver").get(result.getInstance());
+			 driver = (WebDriver)result.getTestClass().getRealClass().getDeclaredField("driver").get(result.getInstance());
 			 System.out.println("Init webdriver");
 		 } catch(Exception e1) {
 		 	e1.printStackTrace();
 		 	System.out.println("NO webdriver");
 		 }
 		try {
-			testLocal.get().addScreenCaptureFromPath(utils.takeScreenShot(testCaseName, webDriver),testCaseName);
+			testLocal.get().addScreenCaptureFromPath(utils.takeScreenShot(testCaseName, driver),testCaseName);
 			System.out.println("Start capture");
 			
 		} catch (IOException e) {
