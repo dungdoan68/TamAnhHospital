@@ -36,7 +36,6 @@ public class TestNGListener implements ITestListener {
 		Utils utils = new Utils();
 		extentTest.log(Status.FAIL, result.getMethod().getMethodName() + " fail");
 		testLocal.get().fail(result.getThrowable());
-		
 		WebDriver webDriver = null;
 		String testCaseName = result.getMethod().getMethodName();
 		 try {
