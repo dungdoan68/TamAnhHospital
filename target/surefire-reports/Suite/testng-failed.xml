@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="4" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <listeners>
+    <listener class-name="extentReportListener.TestNGListener"/>
+  </listeners>
+  <test thread-count="4" parallel="tests" name="Validate page Wiki(failed)" verbose="0">
+    <parameter name="url" value="https://tamanhhospital.vn/"/>
+    <classes>
+      <class name="wikipedia.testsuites.Appointment">
+        <methods>
+          <include name="tearDown"/>
+          <include name="afterMethod"/>
+          <include name="afterCalss"/>
+          <include name="appointmentSchedule"/>
+          <include name="beforeClass"/>
+          <include name="initializeDriver"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- wikipedia.testsuites.Appointment -->
+    </classes>
+  </test> <!-- Validate page Wiki(failed) -->
+</suite> <!-- Failed suite [Suite] -->

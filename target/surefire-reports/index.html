@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">2 suites, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -50,12 +50,12 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>testNG.xml</span>
+                    <span>testNG_Appointment.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
                   <a href="#" panel-name="testlist-Suite" class="navigator-link ">
-                    <span class="test-stats">2 tests</span>
+                    <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,7 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="wikipedia.testsuites.Appointment" class="method navigator-link" hash-for-method="appointmentSchedule">appointmentSchedule</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,15 +117,128 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="wikipedia.testsuites.ValidatePage" class="method navigator-link" hash-for-method="testBlankPage">testBlankPage</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="wikipedia.testsuites.Appointment" class="method navigator-link" hash-for-method="testDataProvider(Chuyên khoa Nhi, PGS.TS.BS. Nguyễn Thị Yến)">testDataProvider(Chuyên khoa Nhi, PGS.TS.BS. Nguyễn Thị Yến)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-Suite_2" class="navigator-link">
+              <span class="suite-name border-failed">Suite 2</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-Suite_2" class="navigator-link ">
+                    <span>testNG_Practice.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-Suite_2" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-Suite_2" class="navigator-link ">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-Suite_2" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-Suite_2" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-Suite_2" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-Suite_2" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">7 methods, 1 failed,   6 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite_2" class="hide-methods failed suite-Suite_2"> (hide)</a> <!-- hide-methods failed suite-Suite_2 -->
+                      <a href="#" panel-name="suite-Suite_2" class="show-methods failed suite-Suite_2"> (show)</a> <!-- show-methods failed suite-Suite_2 -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite_2">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite_2" title="wikipedia.testsuites.PracticeTest" class="method navigator-link" hash-for-method="add_Product_To_Cart">add_Product_To_Cart</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite_2 -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Suite_2" class="hide-methods passed suite-Suite_2"> (hide)</a> <!-- hide-methods passed suite-Suite_2 -->
+                      <a href="#" panel-name="suite-Suite_2" class="show-methods passed suite-Suite_2"> (show)</a> <!-- show-methods passed suite-Suite_2 -->
+                    </span>
+                    <div class="method-list-content passed suite-Suite_2">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite_2" title="wikipedia.testsuites.PracticeTest" class="method navigator-link" hash-for-method="add_Product_To_Cart_Coupon">add_Product_To_Cart_Coupon</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="wikipedia.testsuites.ValidatePage" class="method navigator-link" hash-for-method="testLinkWork">testLinkWork</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite_2" title="wikipedia.testsuites.PracticeTest" class="method navigator-link" hash-for-method="filter_Price">filter_Price</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Suite -->
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite_2" title="wikipedia.testsuites.PracticeTest" class="method navigator-link" hash-for-method="sorting_Products">sorting_Products</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite_2" title="wikipedia.testsuites.PracticeTest" class="method navigator-link" hash-for-method="sorting_Products_DataProvider(price-desc)">sorting_Products_DataProvider(price-desc)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite_2" title="wikipedia.testsuites.PracticeTest" class="method navigator-link" hash-for-method="sorting_Products_DataProvider(popularity)">sorting_Products_DataProvider(popularity)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite_2" title="wikipedia.testsuites.PracticeTest" class="method navigator-link" hash-for-method="sorting_Products_DataProvider(rating)">sorting_Products_DataProvider(rating)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Suite_2 -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -123,32 +250,169 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-passed">
+          <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">wikipedia.testsuites.ValidatePage</span>
+              <img src="failed.png"/>
+              <span class="class-name">wikipedia.testsuites.Appointment</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testBlankPage">
-                  </a> <!-- testBlankPage -->
-                  <span class="method-name">testBlankPage</span>
+                  <a name="appointmentSchedule">
+                  </a> <!-- appointmentSchedule -->
+                  <span class="method-name">appointmentSchedule</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&apos;gia-scheduler__shifts&apos;]//following-sibling::button/span/span/strong&quot;}
+  (Session info: chrome=120.0.6099.109)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.15.0&apos;, revision: &apos;1d14b5521b&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;13.5&apos;, java.version: &apos;11.0.20&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8751be51fd3de4c5f165e5cc7b8897a7, findElement {using=xpath, value=//div[@class=&apos;gia-scheduler__shifts&apos;]//following-sibling::button/span/span/strong}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.109, chrome: {chromedriverVersion: 120.0.6099.71 (9729082fe617..., userDataDir: /var/folders/sj/spty4b2s0vn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53906}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:53906/devtoo..., se:cdpVersion: 120.0.6099.109, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8751be51fd3de4c5f165e5cc7b8897a7
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:607)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:364)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
+	at pages.Lich.chonGioKham(Lich.java:50)
+	at wikipedia.testsuites.Appointment.appointmentSchedule(Appointment.java:56)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+... Removed 21 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">wikipedia.testsuites.Appointment</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testLinkWork">
-                  </a> <!-- testLinkWork -->
-                  <span class="method-name">testLinkWork</span>
+                  <a name="testDataProvider(Chuyên khoa Nhi, PGS.TS.BS. Nguyễn Thị Yến)">
+                  </a> <!-- testDataProvider(Chuyên khoa Nhi, PGS.TS.BS. Nguyễn Thị Yến) -->
+                  <span class="method-name">testDataProvider</span>
+                  <span class="parameters">(Chuyên khoa Nhi,PGS.TS.BS. Nguyễn Thị Yến)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Suite-class-passed -->
         </div> <!-- panel Suite -->
+        <div panel-name="suite-Suite_2" class="panel Suite_2">
+          <div class="suite-Suite_2-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">wikipedia.testsuites.PracticeTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="add_Product_To_Cart">
+                  </a> <!-- add_Product_To_Cart -->
+                  <span class="method-name">add_Product_To_Cart</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button[@type=&quot;submit&quot;]&quot;}
+  (Session info: chrome=120.0.6099.109)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.15.0&apos;, revision: &apos;1d14b5521b&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;13.5&apos;, java.version: &apos;11.0.20&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6d15f329325a52be629170ef37d7bc18, findElement {using=xpath, value=//button[@type=&quot;submit&quot;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.109, chrome: {chromedriverVersion: 120.0.6099.71 (9729082fe617..., userDataDir: /var/folders/sj/spty4b2s0vn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54096}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:54096/devtoo..., se:cdpVersion: 120.0.6099.109, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6d15f329325a52be629170ef37d7bc18
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:607)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:364)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
+	at pages.Product_Practice.get_Add_To_Card(Product_Practice.java:18)
+	at wikipedia.testsuites.PracticeTest.add_Product_To_Cart(PracticeTest.java:31)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+... Removed 21 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite_2-class-failed -->
+          <div class="suite-Suite_2-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">wikipedia.testsuites.PracticeTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="add_Product_To_Cart_Coupon">
+                  </a> <!-- add_Product_To_Cart_Coupon -->
+                  <span class="method-name">add_Product_To_Cart_Coupon</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="filter_Price">
+                  </a> <!-- filter_Price -->
+                  <span class="method-name">filter_Price</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="sorting_Products">
+                  </a> <!-- sorting_Products -->
+                  <span class="method-name">sorting_Products</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="sorting_Products_DataProvider(price-desc)">
+                  </a> <!-- sorting_Products_DataProvider(price-desc) -->
+                  <span class="method-name">sorting_Products_DataProvider</span>
+                  <span class="parameters">(price-desc)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="sorting_Products_DataProvider(popularity)">
+                  </a> <!-- sorting_Products_DataProvider(popularity) -->
+                  <span class="method-name">sorting_Products_DataProvider</span>
+                  <span class="parameters">(popularity)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="sorting_Products_DataProvider(rating)">
+                  </a> <!-- sorting_Products_DataProvider(rating) -->
+                  <span class="method-name">sorting_Products_DataProvider</span>
+                  <span class="parameters">(rating)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite_2-class-passed -->
+        </div> <!-- panel Suite_2 -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/Users/lap02137/Documents/AutoFW/TamAnhHospital/tamanhhospital/testNG.xml</span>
+            <span class="header-content">/Users/lap02137/Documents/AutoFW/TamAnhHospital/tamanhhospital/testNG_Appointment.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -158,22 +422,35 @@
   &lt;listeners&gt;
     &lt;listener class-name=&quot;extentReportListener.TestNGListener&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;4&quot; parallel=&quot;tests&quot; name=&quot;Make appointment&quot; verbose=&quot;0&quot;&gt;
-    &lt;classes&gt;
-      &lt;class name=&quot;wikipedia.testsuites.Appointment&quot;&gt;
-        &lt;methods&gt;
-          &lt;include name=&quot;testDP&quot;/&gt;
-          &lt;exclude name=&quot;appointmentSchedule&quot;/&gt;
-        &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- wikipedia.testsuites.Appointment --&gt;
-    &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Make appointment --&gt;
   &lt;test thread-count=&quot;4&quot; parallel=&quot;tests&quot; name=&quot;Validate page Wiki&quot; verbose=&quot;0&quot;&gt;
+    &lt;parameter name=&quot;url&quot; value=&quot;https://tamanhhospital.vn/&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;wikipedia.testsuites.ValidatePage&quot;/&gt;
+      &lt;class name=&quot;wikipedia.testsuites.Appointment&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Validate page Wiki --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="test-xml-Suite_2" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">/Users/lap02137/Documents/AutoFW/TamAnhHospital/tamanhhospital/testNG_Practice.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite thread-count=&quot;4&quot; parallel=&quot;tests&quot; name=&quot;Suite 2&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;extentReportListener.TestNGListener&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test thread-count=&quot;4&quot; parallel=&quot;tests&quot; name=&quot;Practice Auto in AT.in&quot; verbose=&quot;0&quot;&gt;
+    &lt;parameter name=&quot;url&quot; value=&quot;https://practice.automationtesting.in/&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;wikipedia.testsuites.PracticeTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Practice Auto in AT.in --&gt;
+&lt;/suite&gt; &lt;!-- Suite 2 --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
@@ -184,10 +461,19 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Make appointment (1 class)</span>
-              </li>
-              <li>
                 <span class="test-name">Validate page Wiki (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Suite_2" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Suite 2</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Practice Auto in AT.in (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -195,6 +481,13 @@
         <div panel-name="group-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">Groups for Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Suite_2" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Suite 2</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -215,20 +508,73 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testLinkWork')
-data.setCell(0, 2, 'wikipedia.testsuites.ValidatePage')
-data.setCell(0, 3, 447);
+data.setCell(0, 1, 'testDataProvider')
+data.setCell(0, 2, 'wikipedia.testsuites.Appointment')
+data.setCell(0, 3, 9906);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testBlankPage')
-data.setCell(1, 2, 'wikipedia.testsuites.ValidatePage')
-data.setCell(1, 3, 189);
+data.setCell(1, 1, 'appointmentSchedule')
+data.setCell(1, 2, 'wikipedia.testsuites.Appointment')
+data.setCell(1, 3, 6701);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 5 seconds</span>
+              <span class="suite-total-time">Total running time: 24 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Suite_2" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Suite 2</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Suite_2');
+function tableData_Suite_2() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(7);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'add_Product_To_Cart_Coupon')
+data.setCell(0, 2, 'wikipedia.testsuites.PracticeTest')
+data.setCell(0, 3, 5431);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'sorting_Products_DataProvider')
+data.setCell(1, 2, 'wikipedia.testsuites.PracticeTest')
+data.setCell(1, 3, 5103);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'sorting_Products')
+data.setCell(2, 2, 'wikipedia.testsuites.PracticeTest')
+data.setCell(2, 3, 4531);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'sorting_Products_DataProvider')
+data.setCell(3, 2, 'wikipedia.testsuites.PracticeTest')
+data.setCell(3, 3, 4473);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'sorting_Products_DataProvider')
+data.setCell(4, 2, 'wikipedia.testsuites.PracticeTest')
+data.setCell(4, 3, 4375);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'filter_Price')
+data.setCell(5, 2, 'wikipedia.testsuites.PracticeTest')
+data.setCell(5, 3, 4024);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'add_Product_To_Cart')
+data.setCell(6, 2, 'wikipedia.testsuites.PracticeTest')
+data.setCell(6, 3, 335);
+window.suiteTableData['Suite_2']= { tableData: data, tableDiv: 'times-div-Suite_2'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 32 seconds</span>
+              <div id="times-div-Suite_2">
+              </div> <!-- times-div-Suite_2 -->
             </div> <!-- times-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
@@ -239,20 +585,25 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="ignored-methods-Suite" class="panel">
+        <div panel-name="reporter-Suite_2" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">2 ignored methods</span>
+            <span class="header-content">Reporter output for Suite 2</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">wikipedia.testsuites.Appointment</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">testDataProvider</span>
-                <br/>
-                <span class="ignored-method-name">appointmentSchedule</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Suite_2" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Suite" class="panel">
@@ -263,61 +614,157 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">wikipedia.testsuites.Appointment</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
-                <span class="method-name">initializeDriver</span>
+                <span class="method-name">initializeDriver(https://tamanhhospital.vn/)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">wikipedia.testsuites.ValidatePage</div> <!-- chronological-class-name -->
-              <div class="configuration-test before">
-                <span class="method-name">initializeDriver</span>
-                <span class="method-start">0 ms</span>
-              </div> <!-- configuration-test before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">wikipedia.testsuites.Appointment</div> <!-- chronological-class-name -->
-              <div class="configuration-test after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">4208 ms</span>
-              </div> <!-- configuration-test after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">wikipedia.testsuites.ValidatePage</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">4211 ms</span>
+                <span class="method-start">7834 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">4216 ms</span>
+                <span class="method-start">7841 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">testBlankPage</span>
-                <span class="method-start">4217 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">appointmentSchedule</span>
+                <span class="method-start">7841 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">4408 ms</span>
+                <span class="method-start">14548 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">testDataProvider(Chuyên khoa Nhi, PGS.TS.BS. Nguyễn Thị Yến)</span>
+                <span class="method-start">14797 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod</span>
+                <span class="method-start">14797 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">24703 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-class after">
+                <span class="method-name">afterCalss</span>
+                <span class="method-start">24704 ms</span>
+              </div> <!-- configuration-class after -->
+              <div class="configuration-test after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">24704 ms</span>
+              </div> <!-- configuration-test after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Suite_2" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">wikipedia.testsuites.PracticeTest</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">initializeDriver(https://practice.automationtesting.in/)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="configuration-class before">
+                <span class="method-name">beforeClass</span>
+                <span class="method-start">4038 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">add_Product_To_Cart</span>
+                <span class="method-start">4039 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod</span>
+                <span class="method-start">4039 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod</span>
+                <span class="method-start">4376 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">4376 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">add_Product_To_Cart_Coupon</span>
+                <span class="method-start">4376 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">9808 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">4408 ms</span>
+                <span class="method-start">9808 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">testLinkWork</span>
-                <span class="method-start">4408 ms</span>
+                <span class="method-name">filter_Price</span>
+                <span class="method-start">9808 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod</span>
+                <span class="method-start">13832 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">sorting_Products</span>
+                <span class="method-start">13832 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">13832 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">18364 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">sorting_Products_DataProvider(rating)</span>
+                <span class="method-start">18365 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod</span>
+                <span class="method-start">18365 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">23468 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod</span>
+                <span class="method-start">23469 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">sorting_Products_DataProvider(popularity)</span>
+                <span class="method-start">23469 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod</span>
+                <span class="method-start">27845 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">sorting_Products_DataProvider(price-desc)</span>
+                <span class="method-start">27845 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod</span>
+                <span class="method-start">27845 ms</span>
+              </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">afterCalss</span>
-                <span class="method-start">4856 ms</span>
+                <span class="method-start">32319 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod</span>
-                <span class="method-start">4856 ms</span>
+                <span class="method-start">32319 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-test after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">4857 ms</span>
+                <span class="method-start">32319 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

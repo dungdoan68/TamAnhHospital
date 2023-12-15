@@ -1,5 +1,6 @@
 package wikipedia.testsuites;
 
+import java.text.ParseException;
 import java.time.Duration;
 
 import extentReportListener.TestNGListener;
@@ -23,14 +24,14 @@ public class Appointment extends Base {
     Utils utils;
 
     @Test(priority = 2)
-    public void appointmentSchedule() throws InterruptedException {
+    public void appointmentSchedule() throws InterruptedException, ParseException {
         softAssert = new SoftAssert();
-        String date="14/12/2023";
+        utils = new Utils();
+        String date=utils.getNextDay();
         String time="Sáng";
         String chuyenKhoa ="Chuyên khoa Nhi";//"Chuyên khoa ngoại tiêu hóa";
         String tenBacSi="PGS.TS.BS. Nguyễn Thị Yến";
         String expectationFinalDateTime = date +" - "+time;
-        utils = new Utils();
         Homepage_TA homepage = new Homepage_TA(webDriver);
         utils.clickElement(webDriver,homepage.haNoiBranch());
         String b = homepage.haNoiBranch().getCssValue("color");
@@ -69,12 +70,12 @@ public class Appointment extends Base {
         return  data;
     }
     @Test(priority = 2,dataProvider ="chuyen khoa")
-     public void testDataProvider(String chuyenKhoa, String bacSi) throws InterruptedException {
+     public void testDataProvider(String chuyenKhoa, String bacSi) throws InterruptedException, ParseException {
         softAssert = new SoftAssert();
-        String date="14/12/2023";
+        utils = new Utils();
+        String date=utils.getNextDay();
         String time="Sáng";
         String expectationFinalDateTime = date +" - "+time;
-        utils = new Utils();
         Homepage_TA homepage = new Homepage_TA(webDriver);
         utils.clickElement(webDriver,homepage.haNoiBranch());
         String b = homepage.haNoiBranch().getCssValue("color");

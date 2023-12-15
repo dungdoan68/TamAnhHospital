@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite" thread-count="4" parallel="tests" >
+<suite name="Suite 2" thread-count="4" parallel="tests" >
     <listeners>
         <listener class-name="extentReportListener.TestNGListener"></listener>
     </listeners>
-    <test name="Validate page Wiki">
+    <test name="Practice Auto in AT.in">
+        <parameter name="url" value="https://practice.automationtesting.in/"/>
         <classes>
-            <class name="wikipedia.testsuites.ValidatePage">
+            <class name="wikipedia.testsuites.PracticeTest">
             </class>
         </classes>
     </test>

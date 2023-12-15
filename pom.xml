@@ -80,7 +80,8 @@
           <version>2.22.1</version>
            <configuration>
           <suiteXmlFiles>
-            <suiteXmlFile>testNG.xml</suiteXmlFile>
+            <suiteXmlFile>testNG_Appointment.xml</suiteXmlFile>
+              <suiteXmlFile>testNG_Practice.xml</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
         </plugin>
