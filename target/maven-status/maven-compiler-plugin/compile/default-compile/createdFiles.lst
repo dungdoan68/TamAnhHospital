@@ -1,7 +1,0 @@
-utils/Utils.class
-pages/Homepage_TA.class
-pages/Lich.class
-pages/Homepage_HSC.class
-base/Base.class
-extentReportListener/TestNGListener.class
-extentReportListener/TestNGListener$Reports.class
