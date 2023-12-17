@@ -199,47 +199,6 @@ public class Utils {
         }
         return  data;
     }
-    public void readExcelData(String fileName, String testDataSheet){
-        FileInputStream fis = null;
-        File file = new File(TESTDATA_SHEET_PATH+"/"+fileName);
-        try{
-            fis = new FileInputStream(file);
-            System.out.println(TESTDATA_SHEET_PATH+"/"+fileName);
-        }
-        catch (Exception e){
-            e.printStackTrace();
-        }
-        try {
-            book = WorkbookFactory.create(fis);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        String fileExtensionName = fileName.substring(fileName.indexOf("."));
-        if(fileExtensionName.equals("xlsx")){
-            try {
-                book = new XSSFWorkbook(fis);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
-        else if(fileExtensionName.equals("xls")){
-            try {
-                book = new HSSFWorkbook(fis);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
-        sheet = book.getSheet(testDataSheet);
-        int rowCount = sheet.getLastRowNum()-sheet.getFirstRowNum();
-        Objects [][] data = new Objects[sheet.getLastRowNum()][sheet.getRow(0).getLastCellNum()];
-        for(int i=1; i<rowCount+1;i++){
-            Row row = sheet.getRow(i);
-            for(int j=0; j<row.getLastCellNum();j++){
-                System.out.print(row.getCell(j).getStringCellValue()+ "||");
-            }
-            System.out.println();
-        }
-    }
     public static Object[][] getTestData1(String fileName,String sheetName) {
         FileInputStream fis = null;
         File file = new File(TESTDATA_SHEET_PATH+"/"+fileName);
